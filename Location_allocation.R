@@ -26,7 +26,9 @@ mubi_euclidist <- raster::raster(mubi_euclidist)
 
 
 ggplot() +
-  geom_stars(data = ras_pop,na.rm=TRUE,alpha=1) + 
+  geom_stars(data = ras_pop,na.rm=TRUE) + 
+  geom_sf(data = mubi_health,aes(color=wardname))+
+  geom_sf(data = mubi_wards,alpha =0.5) +
   scale_fill_viridis_c(na.value = "white") +
   theme_void()
   
