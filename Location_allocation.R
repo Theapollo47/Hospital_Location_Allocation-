@@ -13,7 +13,7 @@ mubi_wards <- read_sf ("/Users/User/Documents/GIS/Healthcare Allocation Analysis
 
 mubi_wards <- st_transform(mubi_wards,crs = st_crs(ras_pop))
 
-# Extract zonal statistics (mean in this example)
+# Extract zonal statistics 
 zonal_stats <- zonal(ras_pop, mubi_wards, sum)
 
 ras_pop <- st_as_stars(ras_pop)
@@ -24,19 +24,3 @@ ggplot() +
   theme_void()
   
   
-library(googledrive)
-
-# Authenticate with your Google account
-drive_auth()
-1
-
-
-# Replace the URL with the shareable link of your Google Drive file
-file_url <- "https://drive.google.com/file/d/1ueilZaek-TUmkY2ZYurBXNDQnC-wdSJr/view"
-
-# Extract the file ID from the URL
-file_id <- 1ueilZaek-TUmkY2ZYurBXNDQnC-wdSJr
-
-# Download the file
-drive_download(as_id(file_id))
-
